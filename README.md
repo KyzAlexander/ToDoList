@@ -1,3 +1,3 @@
 # ToDoList
 
-Использовал библиотеки: Tailwind CSS, (React icons <-??)
+Использовал библиотеку: Tailwind CSS
