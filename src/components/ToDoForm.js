@@ -20,7 +20,7 @@ const ToDoForm = ({ addTask }) => {
     }
   };
   return (
-    <form className='mb-4' onSubmit={handleSubmit}>
+    <form className='addTasksForm mb-4' onSubmit={handleSubmit}>
       <input
         className='text-gray-600 p-2 rounded-l-xl'
         value={userInput}
@@ -28,7 +28,7 @@ const ToDoForm = ({ addTask }) => {
         onKeyDown={handleKeyPress}
         placeholder='Enter a task ...'
       ></input>
-      <button className='bg-green-600 p-2 rounded-r-xl'>Save</button>
+      <button className='btnSave bg-green-600 p-2 rounded-r-xl'>Save</button>
     </form>
   );
 };

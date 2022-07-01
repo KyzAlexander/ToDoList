@@ -30,7 +30,7 @@ const Todos = () => {
 
   return (
     <div className='todos mt-10'>
-      <h1 className='mb-5 font-bold'>Todos List: {todos.length}</h1>
+      <h1 className='title mb-5 font-bold'>Todos List: {todos.length}</h1>
       <ToDoForm addTask={addTask} />
       {todos.map((todo) => {
         return (
