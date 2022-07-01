@@ -8,7 +8,7 @@ const ToDo = ({ todo, toggleTask, removeTask }) => {
     >
       <div
         className={
-          todo.complete ? "line-through decoration-red-400" : "no-underline"
+          todo.complete ? "line-through text-gray-400" : "no-underline"
         }
       >
         {todo.task}
