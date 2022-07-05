@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import BtnDelete, {
   BtnActive,
   BtnCompleted,
@@ -9,7 +9,12 @@ import BtnDelete, {
 const ToDo = ({ todo, toggleTask, removeTask }) => {
   const [isEditMode, setIsEditMode] = useState(false);
   const [correctTask, setCorrectTask] = useState(todo.task);
-
+  const editTitleInputRef = useRef(null); // используется чтобы сделать фокус в конце предложения
+  useEffect(() => {
+    if (isEditMode) {
+      editTitleInputRef?.current?.focus();
+    }
+  }, [isEditMode]);
   return (
     <div
       key={todo.id}
@@ -17,14 +22,23 @@ const ToDo = ({ todo, toggleTask, removeTask }) => {
     >
       <div
         className={
-          todo.complete ? "line-through text-gray-400" : "no-underline"
+          todo.complete
+            ? "line-through text-gray-400 break-all"
+            : "no-underline break-all"
         }
       >
         {isEditMode ? (
           <input
             className='b bg-blue-300'
             value={correctTask}
+            ref={editTitleInputRef}
             onChange={(e) => setCorrectTask(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                todo.task = correctTask;
+                setIsEditMode(false);
+              }
+            }}
           ></input>
         ) : (
           todo.task
