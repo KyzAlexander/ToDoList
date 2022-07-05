@@ -20,9 +20,9 @@ const ToDoForm = ({ addTask }) => {
     }
   };
   return (
-    <form className='addTasksForm mb-4' onSubmit={handleSubmit}>
+    <form className='addTasksForm mb-4 flex flex-row' onSubmit={handleSubmit}>
       <input
-        className='text-gray-600 p-2 rounded-l-xl'
+        className='text-gray-600 p-2 rounded-l-xl w-full'
         value={userInput}
         onChange={handleChange}
         onKeyDown={handleKeyPress}

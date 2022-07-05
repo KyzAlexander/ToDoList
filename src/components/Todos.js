@@ -29,7 +29,7 @@ const Todos = () => {
   };
 
   return (
-    <div className='todos mt-10'>
+    <div className='todos mt-10 w-1/4'>
       <h1 className='title mb-5 font-bold'>Todos List: {todos.length}</h1>
       <ToDoForm addTask={addTask} />
       {todos.map((todo) => {
