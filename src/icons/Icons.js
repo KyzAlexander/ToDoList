@@ -41,7 +41,7 @@ export function BtnCompleted() {
     <svg
       className='w-5 h-5 fill-green-500'
       version='1.1'
-      id='Capa_1'
+      id='Capa_2'
       x='0px'
       y='0px'
       width='500px'
